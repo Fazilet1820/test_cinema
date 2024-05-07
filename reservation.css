@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgba(179, 6, 35, 1);
+  grid-area: nav;
+  margin-top: 39px;
+  margin-left: 92px;
+  margin-right: 92px;
+  width: 1256px;
+  height: 64px;
+  border-radius: 6px; /*dikdörtgen köselerini yuvarlamak icin*/
+}
+
+#logo {
+  width: 97px;
+  height: 38px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.menu {
+  width: 258px;
+  height: 21px;
+  left: 1065px;
+  top: 60px;
+  float: right; /*saga yaslanmasi icin*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  color: white;
+}
+
+.menu ul li {
+  display: inline; /*yanyana durmalarini saglar*/
+  font-size: 14px;
+  font-family: Oswald;
+  color: white !important;
+  margin-right: 20px; /* list elementelerin arasindaki bosluk*/
+}
+a {
+  text-decoration: none;
+}
+
+.center {
+  width: 100%;
+  height: 40%;
+  display: flex;
+}
+
+.film img {
+  flex: 3;
+  height: 232px;
+  width: 398px;
+  margin-left: 90px;
+  margin-top: 50px;
+}
+
+.description {
+  flex: 3;
+  height: 100%;
+  align-items: left;
+  margin-left: 40px;
+  margin-right: 500px;
+  margin-top: 50px;
+}
+
+.description h2 {
+  font-weight: 600;
+  font-size: 28;
+}
+
+.description h5,
+h6 {
+  font-family: Inter;
+  color: gray;
+  font-size: 16;
+  margin-top: 10px;
+}
+.description p {
+  font-family: Inter;
+  font-size: 14;
+  font-weight: 400;
+}
+
+.icons {
+  display: flex;
+}
+.icons i {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.icons p {
+  margin-top: 30px;
+  flex: 3;
+  font-weight: 600;
+}
+
+#holder h2 {
+  font-family: Oswald;
+  font-size: 20;
+  margin-top: 30px;
+  margin-left: 90px;
+  margin-bottom: 20px;
+}
+
+.theater {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+  gap: 5px;
+  margin-left: 450px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+.seat {
+  display: none;
+  /* hide the actual checkbox, it will be styled by the label */
+}
+
+.seat-label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.seat-label.available:hover,
+.seat:checked + .seat-label.available {
+  background-color: #fc0;
+}
+
+.seat-label.reserved,
+.seat:disabled + .seat-label {
+  background-color: #d00;
+  cursor: not-allowed;
+}
+
+#holder {
+  height: 561px;
+  width: 1256px;
+  top: 92px;
+  left: 412px;
+  background-color: white;
+  border: 1px solid #a4a4a4;
+  margin-left: 90px;
+}
+.seatDescription {
+  margin-bottom: 0;
+  margin-top: 150px;
+  margin-left: 450px;
+}
+
+.seatDescription ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.seatDescription li {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  background-color: rgba(179, 6, 35, 1);
+  border: none;
+  border-radius: 10px;
+  margin-left: 450px;
+  margin-top: 10px;
+}
+
+.button button {
+  width: 100%; /* Butonun genişliği div'e eşit olacak şekilde */
+  height: 100%; /* Butonun yüksekliği div'e eşit olacak şekilde */
+  background-color: transparent; /* Butonun arka plan rengini transparan yap */
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer; /* İmleci bir el şekline dönüştür */
+}

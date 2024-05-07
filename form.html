@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <nav>
+        <img id="logo" src="images/logo.png" alt="cinemaLogo" />
+
+        <div class="menu">
+          <ul>
+            <li><a href="#nowPlaying" style="color: white"> NOW PLAYING</a></li>
+            <li><a href="#comingSoon" style="color: white"> COMING SOON</a></li>
+            <li><a href="about" style="color: white"> ABOUT</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="form">
+      <h2 style="color: white">BOOKING INFO</h2>
+      <form>
+        <label for="fname"></label>
+        <br />
+        <input type="text" id="fname" placeholder="First name" />
+        <br />
+        <label for="email"></label>
+        <br />
+        <input type="email" id="email" placeholder="Email" />
+        <br />
+        <label for="pnumber"></label>
+        <br />
+        <input type="tel" id="number" placeholder="Phone Number" />
+        <br />
+        <h4 style="color: white">SEATS</h4>
+
+        <br />
+        <div class="bookingButton">
+          <button onclick="confirmationMessage()">BOOK NOW!"</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function confirmationMessage() {
+        alert("Please check your e-mail for the accuracy of the information");
+      }
+    </script>
+  </body>
+</html>

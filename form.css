@@ -1,0 +1,97 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgba(179, 6, 35, 1);
+  grid-area: nav;
+  margin-top: 39px;
+  margin-left: 92px;
+  margin-right: 92px;
+  width: 1256px;
+  height: 64px;
+  border-radius: 6px; /*dikdörtgen köselerini yuvarlamak icin*/
+}
+
+#logo {
+  width: 97px;
+  height: 38px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.menu {
+  width: 258px;
+  height: 21px;
+  left: 1065px;
+  top: 60px;
+  float: right; /*saga yaslanmasi icin*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  color: white;
+}
+
+.menu ul li {
+  display: inline; /*yanyana durmalarini saglar*/
+  font-size: 14px;
+  font-family: Oswald;
+  color: white !important;
+  margin-right: 20px; /* list elementelerin arasindaki bosluk*/
+}
+a {
+  text-decoration: none;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, 1 fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-left: 450px;
+  margin-top: 100px;
+}
+
+.form {
+  grid-column-start: 2/3;
+  grid-row-start: 2/3;
+  place-items: center;
+  border-box: 10px;
+  width: 560px;
+  height: 530px;
+  background-color: rgba(179, 6, 35, 1);
+  border-radius: 6px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  margin-left: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.bookingButton {
+  width: 300px; /* Uzunluğu istediğiniz gibi ayarlayabilirsiniz */
+  height: 50px; /* Yüksekliği istediğiniz gibi ayarlayabilirsiniz */
+  background-color: white; /* Arka plan rengi kırmızı */
+  border: none; /* Kenarlık olmadan */
+  border-radius: 10px; /* Kenar yuvarlaklığı */
+  margin-left: 40px;
+  margin-top: 10px;
+}
+.bookingButton button {
+  width: 100%; /* Butonun genişliği div'e eşit olacak şekilde */
+  height: 100%; /* Butonun yüksekliği div'e eşit olacak şekilde */
+  background-color: transparent; /* Butonun arka plan rengini transparan yap */
+  border: none; /* Kenarlık olmadan */
+  color: rgba(179, 6, 35, 1); /* Yazı rengi beyaz */
+  font-size: 18px; /* Yazı boyutu */
+  font-weight: bold; /* Kalın yazı */
+  cursor: pointer; /* İmleci bir el şekline dönüştür */
+}
