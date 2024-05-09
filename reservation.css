@@ -119,12 +119,14 @@ h6 {
 .seats {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
-  gap: 5px;
-  margin-left: 450px;
+  gap: 15px;
+  margin-left: 250px;
+  grid-row-gap: 20px;
 }
 
 .row {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  gap: 15px;
 }
 
 .seat {
@@ -132,10 +134,16 @@ h6 {
   /* hide the actual checkbox, it will be styled by the label */
 }
 
+.seats .empty-space {
+  width: 50px;
+  height: 300px;
+}
+
 .seat-label {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
   background-color: #ccc;
   cursor: pointer;
   border-radius: 4px;
@@ -154,7 +162,7 @@ h6 {
 #holder {
   height: 561px;
   width: 1256px;
-  top: 92px;
+  margin-top: 20px;
   left: 412px;
   background-color: white;
   border: 1px solid #a4a4a4;
@@ -162,7 +170,7 @@ h6 {
 }
 .seatDescription {
   margin-bottom: 0;
-  margin-top: 150px;
+  margin-top: 30px;
   margin-left: 450px;
 }
 
