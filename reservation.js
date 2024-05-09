@@ -3,6 +3,8 @@ function redirectToFormPage() {
 }
 
 // DOM içeriği tamamen yüklendiğinde bu fonksiyon çalışır
+
+//function to give numbers to the seats
 document.addEventListener("DOMContentLoaded", function () {
   // 'seat' sınıfına sahip tüm elementleri seç
   const seats = document.querySelectorAll(".seat");
