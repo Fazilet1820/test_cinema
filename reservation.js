@@ -30,3 +30,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// reservation.js
+
+// Koltuk işaretleme fonksiyonu
+function toggleSeatSelection(seatNumber) {
+  // Seçilen koltukları local storage'a kaydetme
+  let selectedSeats = JSON.parse(localStorage.getItem("selectedSeats")) || [];
+  const index = selectedSeats.indexOf(seatNumber);
+  if (index !== -1) {
+    selectedSeats.splice(index, 1); // Koltuk zaten seçiliyse, seçimini kaldır
+  } else {
+    selectedSeats.push(seatNumber); // Koltuk henüz seçili değilse, seçimini ekle
+  }
+  localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
+}
+
+// reservation.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const seats = document.querySelectorAll(".seat");
+  seats.forEach((seat) => {
+    seat.addEventListener("change", () => {
+      updateSelectedSeats();
+    });
+  });
+
+  function updateSelectedSeats() {
+    const selectedSeats = [];
+    seats.forEach((seat) => {
+      if (seat.checked && !seat.classList.contains("reserved")) {
+        selectedSeats.push(seat.id);
+      }
+    });
+    localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
+  }
+
+  function loadSelectedSeats() {
+    const selectedSeats =
+      JSON.parse(localStorage.getItem("selectedSeats")) || [];
+    selectedSeats.forEach((seatId) => {
+      const seat = document.getElementById(seatId);
+      if (seat) {
+        seat.checked = true;
+      }
+    });
+  }
+
+  loadSelectedSeats();
+});
