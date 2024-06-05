@@ -209,12 +209,12 @@ h6 {
 }
 
 .button button {
-  width: 100%; /* Butonun genişliği div'e eşit olacak şekilde */
-  height: 100%; /* Butonun yüksekliği div'e eşit olacak şekilde */
-  background-color: transparent; /* Butonun arka plan rengini transparan yap */
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
   border: none;
   color: white;
   font-size: 18px;
   font-weight: bold;
-  cursor: pointer; /* İmleci bir el şekline dönüştür */
+  cursor: pointer;
 }

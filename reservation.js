@@ -2,51 +2,36 @@ function redirectToFormPage() {
   window.location.href = "form.html";
 }
 
-// DOM içeriği tamamen yüklendiğinde bu fonksiyon çalışır
-
-//function to give numbers to the seats
 document.addEventListener("DOMContentLoaded", function () {
-  // 'seat' sınıfına sahip tüm elementleri seç
   const seats = document.querySelectorAll(".seat");
 
-  // Her koltuğa sıralı olarak numara ekleme
   let seatNumber = 1;
   seats.forEach((seat) => {
     seat.nextElementSibling.textContent = seatNumber;
     seatNumber++;
   });
 
-  // Her koltuğa 'click' olayı için bir olay dinleyici ekle
   seats.forEach((seat) => {
     seat.addEventListener("click", function () {
-      // Koltuğun işaretli olup olmadığını kontrol et
       if (this.checked) {
-        // İşaretli ise, numarayı göster
         this.nextElementSibling.style.visibility = "visible";
       } else {
-        // İşaretli değilse, numarayı gizle
         this.nextElementSibling.style.visibility = "hidden";
       }
     });
   });
 });
 
-// reservation.js
-
-// Koltuk işaretleme fonksiyonu
 function toggleSeatSelection(seatNumber) {
-  // Seçilen koltukları local storage'a kaydetme
   let selectedSeats = JSON.parse(localStorage.getItem("selectedSeats")) || [];
   const index = selectedSeats.indexOf(seatNumber);
   if (index !== -1) {
-    selectedSeats.splice(index, 1); // Koltuk zaten seçiliyse, seçimini kaldır
+    selectedSeats.splice(index, 1);
   } else {
-    selectedSeats.push(seatNumber); // Koltuk henüz seçili değilse, seçimini ekle
+    selectedSeats.push(seatNumber);
   }
   localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
 }
-
-// reservation.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const seats = document.querySelectorAll(".seat");
