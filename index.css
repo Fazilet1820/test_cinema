@@ -157,6 +157,10 @@ a {
   text-decoration: none;
 }
 
+.home {
+  display: none;
+}
+
 #sidebar {
   background-color: rgba(179, 6, 35, 1);
   grid-area: sidebar;
@@ -215,29 +219,39 @@ a {
 
   /* Navigation */
   nav {
-    width: 100%;
-    padding: 10px;
+    width: 130%;
+    margin-top: 0;
     background-color: #8b0000;
   }
 
   #logo {
     height: 30px;
-    margin: 0;
-    margin-left: 70%;
+    margin-top: 4%;
+    margin-left: 65%;
   }
- 
 
-  .menu  ul li {
+  .home {
+    margin-left: 20%;
+    display: block;
+    margin-top: -6%;
+  }
+
+  .menu ul {
     display: none;
   }
 
+  .home ul li {
+    font-size: 14px;
+    font-family: Oswald;
+    color: white !important;
+    display: inline-block;
+  }
 
   /* Movie Section */
   #movie {
+    width: 130%;
     position: relative;
-    width: 100%;
-    margin: 20px 0;
-    text-align: center;
+    margin-top: 10px;
   }
 
   #movie img {
@@ -247,88 +261,125 @@ a {
 
   .titleButton {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    left: 20px;
+    padding: 10px;
+    margin-top: 30%;
+    margin-bottom: 0;
   }
 
-  .titleButton h2, .titleButton p {
-    margin: 5px 0;
+  .titleButton h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .titleButton p {
+    font-size: 14px;
   }
 
   .titleButton button {
-    background-color: #8b0000;
-    color: white;
+    width: 40%;
+    height: 20%;
+
+    background-color: rgba(179, 6, 35, 1);
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .titleButton button:hover {
-    background-color: #b22222;
-  }
-
-  /* Now Playing Section */
-  #now-playing-container {
-    width: 100%;
-    padding: 20px;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #now-playing-container > div {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
-  #now-playing-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  #now-playing-container h4, #now-playing-container p {
-    margin: 10px 0;
+    border-radius: 6px;
+    color: white;
     text-align: center;
-  }
-
-  #now-playing-container button {
-    background-color: #8b0000;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
-  }
-
-  #now-playing-container button:hover {
-    background-color: #b22222;
+    margin-left: 60%;
   }
 
   /* Sidebar */
   #sidebar {
+    width: 110%;
+    height: 250px;
+    background-color: rgba(179, 6, 35, 1);
+    box-sizing: border-box;
+    margin-left: 55%;
+    margin-top: -50px;
+  }
+
+  #now-playing-container {
+    display: none;
+  }
+
+  .popular-movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    padding: 20px;
-    background-color: #fff;
   }
 
-  .popular-movies, .coming-soon {
-    margin-bottom: 20px;
+  .coming-soon .movie-item:nth-child(1),
+  .coming-soon .movie-item:nth-child(2),
+  .coming-soon .movie-item:nth-child(3) {
+    display: none;
+  }
+  .coming-soon {
+    color: white;
   }
 
-  .popular-movies .movie-item, .coming-soon .movie-item {
+  .movie-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  .movie-item:nth-child(2) {
+    display: none;
+  }
+  .movie-item img {
+    width: 80px;
+    height: auto;
   }
 
-  .popular-movies img, .coming-soon img {
-   
+  .movie-item p {
+    font-size: 8px;
+    color: gray;
+    margin-left: 5px;
+    flex-grow: 1;
+  }
+  .popular-movies::before,
+  .coming-soon::before {
+    content: "";
+    display: block;
+    height: 20px; /* Aradaki boşluk için */
+  }
 
+  .popular-movies::after {
+    content: attr(class);
+    display: block;
+    color: white;
+    background-color: rgba(179, 6, 35, 1);
+    height: 80px;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    padding: 20px;
+  }
+
+  .popular-movies::after {
+    content: "NOW PLAYING";
+  }
+
+  .coming-soon::after {
+    content: attr(class);
+    display: block;
+    color: white;
+    background-color: rgba(179, 6, 35, 1);
+    height: 38px;
+    width: 180%;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -140%;
+    padding: 15px;
+    text-transform: uppercase;
+  }
 }
